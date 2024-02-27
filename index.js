@@ -210,14 +210,13 @@ function renderMovies(movies, page="search"){
 async function fetchMovies(e){
     const inputEl = document.getElementById("input") 
     
-    // const url = `https://fabulous-sunburst-78d993.netlify.app/.netlify/functions/fetchEnvVariables/?title=${inputEl.value}`
-    const url = `http://www.omdbapi.com/?apikey=${apiKey}&s=${inputEl.value}`
+    const url = `https://ashflix.netlify.app//.netlify/functions/fetchEnvVariables/?title=${inputEl.value}`
     const response = await fetch(url)
     const data = await response.json()
     
-    // console.log(data)
+    console.log(data)
     
-    if(data.Response === "False"){
+    if(data.statusCode === 404){
         let html = `
             <div class="no-movies">
                 <h3>No movies found</h3>
@@ -226,14 +225,9 @@ async function fetchMovies(e){
         movieContainerEl.innerHTML = html
         
     }else{
-        const allMovies = await getMoreInfo(data.Search)
-        const moviesCheckedWithWatchList = checkWithWatchlist(allMovies)
+        const moviesCheckedWithWatchList = checkWithWatchlist(data.allMovies)
         console.log(moviesCheckedWithWatchList)
-
-        // data.data.Search.forEach((movie) => {
-        
         movieContainerEl.innerHTML = renderMovies(moviesCheckedWithWatchList)
-        
     }
 
 }
