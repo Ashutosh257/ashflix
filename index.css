@@ -1,0 +1,167 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    font-family: "Roboto", cursive;  
+    background: url("./assets/cccircular.svg") no-repeat center center/cover;
+}
+
+.back-cover{
+    height: 30vh;
+    padding: 1em;
+}
+
+.text-logo{
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-size: 4rem;
+    text-shadow: 5px 5px 15px rgba(131, 83, 178, 0.687);
+    text-align: center;
+    color: #8f56ea;
+    transform: distort(10deg);
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; 
+    gap: 0.5em;
+}
+
+
+input, .search-btn, .card{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+input{
+    padding: 1em ;
+    text-indent: 10px;
+    border-radius: 10px;
+    width: 60%;
+    border: none;
+    outline: none;
+    background-color: #f6f6f6de;
+}
+
+.search-btn{
+    background-color: #8f56ea;
+    color: #f6f6f6de;
+    font-weight: 600;
+    font-size: 1.2rem;
+
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 10px;
+    align-self: center;
+    cursor: pointer;
+}
+
+.card{
+    width: 80%;
+    background-color: #f4f4f4;
+    padding: 2em;
+    margin: 3em auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 1em;
+}
+
+.image-poster{
+    width: 180px;
+    object-fit: contain;
+}
+
+.movie-details{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.movie-plot{
+    /* width: 50%; */
+    padding: 1em;
+}
+
+.movie-ratings, .movie-genre{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    /* font-weight: 600; */
+}
+
+.movie-ratings > p{
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+}
+
+.bold{
+    font-weight: 600;
+}
+
+.remove-watchlist, .add-watchlist{
+    color: #f6f6f6;
+    font-weight: 600;
+    font-size: 1.02rem;
+    
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 10px;
+    align-self: center;
+    cursor: pointer;
+}
+
+.remove-watchlist{
+background-color: #cd271b;
+}
+
+.add-watchlist{
+    background-color: #37a93b;
+}
+
+.no-movies{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #f6f6f6;
+    margin: 5em 0;
+}
+
+.switcher{
+    
+    display: flex;
+    justify-content: flex-end;
+    gap: 1em;
+}
+
+.watchlist-btn, .my-search-btn{
+    color: #8f56ea;
+    background-color: transparent;
+    font-weight: 600;
+    margin: 0.5em 0.5em 0 0;
+    font-size: 1.2rem;
+    padding: 0.4em;
+    cursor: pointer;
+    border: none;
+}
+
+.developed-by{
+    padding: 1em;
+}
+
+.developed-by a{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #8f56ea;
+    text-decoration: none;
+}
