@@ -25,14 +25,20 @@ const handler = async (event) => {
     if(data.Response === "False"){
         return {
           statusCode: 404,
-          body: JSON.stringify({ message: "No Movies Found!" })
+          body: JSON.stringify({ 
+            statusCode: 404,
+            message: "No Movies Found!" 
+          })
         }
     }else{
         
         const allMovies = await getMoreInfo(data.Search)
         return {
           statusCode: 200,
-          body: JSON.stringify({ data: allMovies })
+          body: JSON.stringify({ 
+            statusCode: 200,
+            allMovies: allMovies 
+          })
         }
     }
   } catch (error) {
