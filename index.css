@@ -69,7 +69,6 @@ input{
     text-align: center;
 
     display: flex;
-    /* justify-content: space-between; */
     gap: 1em;
 }
 
@@ -87,7 +86,6 @@ input{
 }
 
 .movie-plot{
-    /* width: 50%; */
     padding: 1em;
 }
 
@@ -96,7 +94,6 @@ input{
     justify-content: space-between;
     align-items: center;
     gap: 1em;
-    /* font-weight: 600; */
 }
 
 .movie-ratings > p{

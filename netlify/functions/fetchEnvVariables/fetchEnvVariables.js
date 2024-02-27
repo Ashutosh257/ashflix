@@ -9,7 +9,6 @@ async function getMoreInfo(allMovies, limit=10){
       return data
   }))
 
-  // console.log(finalMovies)
   return finalMovies
 }
 

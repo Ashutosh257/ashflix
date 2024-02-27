@@ -2,7 +2,7 @@
 
 # Adding ENV variables on Netlify
 
-The website is hosted [here](https://fabulous-sunburst-78d993.netlify.app/)
+The website is hosted [here](https://ashflix.netlify.app/)
 
 ```diff
 - This documentation assumes that you have hosted your project on Netlify
@@ -33,21 +33,24 @@ Netlify can create serverless functions for you locally as part of Netlify Funct
 
 1. Choose the 2nd option - `Serverless function (Node/Go/Rust)`
 Use arrow keys to select the option.
-![Creating serverless function](./assets/readme/step%20a.png)
+![Create serverless function](./assets/readme/step%20a.png)
 
-2. Choose the language you want to write your serverless function in.
+2. Next, it will ask you where to keep the serverless function i.e. the path. Press enter for the default path, i.e. `netlify/functions`
+![Set function path](./assets/readme/step%20b.png)
+
+1. Choose the language you want to write your serverless function in.
     (I have chosen Javascript)
-![Choosing language for  serverless function](./assets/readme/step%20b.png)
+![Choose language for  serverless function](./assets/readme/step%20c.png)
 
 
-1. Choose the basic template 
+4. Choose the basic template 
    `[hello-world] Basic function that shows async/await usage, and response formatting`
-![Choose basic boilerplate code](./assets/readme/step%20c.png)
+![Choose basic boilerplate code](./assets/readme/step%20d.png)
 
 1. Give a name for your function (I have used `fetchEnvVariables`, you can give anything else as well but make sure it follows the javascript naming conventions)
 
 
-5. You will get the following boilerplate code :
+6. You will get the following boilerplate code :
 ```
 // Docs on event and context https://docs.netlify.com/functions/build/#code-your-function-2
 const handler = async (event) => {
@@ -80,7 +83,7 @@ Step 4: Changes to the serverless function
 const url = `https://[YOUR_HOSTED_WEBSITE_URL_ON_NETLIFY]/.netlify/functions/[SERVERLESS_FUNCTION_NAME]/?param1=${value}&param2=${param2}`
 
 // It should look something like this in the end
-const url = `https://fabulous-sunburst-78d993.netlify.app/.netlify/functions/fetchEnvVariables/?title=${inputEl.value}`
+const url = `https://ashflix.netlify.app/.netlify/functions/fetchEnvVariables/?title=${inputEl.value}`
     
 ```
 
@@ -94,6 +97,7 @@ const apiKey = process.env.MY_API_KEY <-- this line will change according to the
 
 const handler = async (event) => {
     
+    // You can check the `event` and write the logic accordingly
     // console.log(event)
 
     try {
@@ -118,7 +122,7 @@ module.exports = { handler }
 ### STEP 4: Push to GitHub 
 Once you push to Github wait for the changes to happen!
 
-If you get stuck! Check out - https://github.com/Ashutosh257/netifly-env-setup
+If you get stuck! Check out - [this repo](https://github.com/Ashutosh257/ashflix)
 
 
 ## Voila! You can now use your API Keys or any Environment variables without exposing it to the Internet!!
