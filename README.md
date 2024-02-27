@@ -25,7 +25,13 @@ This command will open a browser window, asking you to log in with Netlify and g
 
 Once authorized, Netlify CLI stores your access token in a config.json global configuration file. The Netlify CLI uses the token in this file automatically for all future commands.
 
-### Step 3: Create serverless functions with Netlify 
+### Step 3 (Optional): Link Git repository with deployed Netlify website
+For some reason if you're unable to create serverless functions. Execute the `netlify link` command to check if the current repository is connected to the deployed Netlify website and make updates accordingly.
+
+You can choose other options as well to link the webiste and the repository.
+![Create serverless function](./assets/readme/netlify_link.png)
+
+### Step 4: Create serverless functions with Netlify 
 
 Netlify can create serverless functions for you locally as part of Netlify Functions with the `functions:create` command:
 
@@ -77,6 +83,9 @@ It's like the entrypoint of the file.
 Step 4: Changes to the serverless function
 
 `In index.js `
+You make a fetch request to the serverless function instead of the actual API endpoint.
+
+The serverless function will make the actual fetch request to the API endpoint.
 
 ```
 // Make changes to the url according to your details inside the [] (square brackets)
@@ -84,10 +93,15 @@ const url = `https://[YOUR_HOSTED_WEBSITE_URL_ON_NETLIFY]/.netlify/functions/[SE
 
 // It should look something like this in the end
 const url = `https://ashflix.netlify.app/.netlify/functions/fetchEnvVariables/?title=${inputEl.value}`
+
+const response = await fetch(url)
+const data = await response.json()
+console.log(data)
     
 ```
 
 `Serverless function code:`
+#### The function code will change depending on the logic you would apply!
 
 ```
 // you can access the env variable defined on Netlify using 
@@ -119,7 +133,7 @@ const handler = async (event) => {
 module.exports = { handler }
 ```
 
-### STEP 4: Push to GitHub 
+### STEP 5: Push to GitHub 
 Once you push to Github wait for the changes to happen!
 
 If you get stuck! Check out - [this repo](https://github.com/Ashutosh257/ashflix)
